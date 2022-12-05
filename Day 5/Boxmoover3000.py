@@ -39,18 +39,12 @@ for x in podatki:
 # Anwser to part one: cwmtghbdw
 
 for x in podatki:
-
-    # Vrstice spremenimo v terko, ter to terko razpakiramo.
     temp = line_splitter(x)
     amount,from_where,to_where = temp
-
-    # Škatli destinacije pripnemo (škatlo izvora[od minus koliko jih rabmo do zadnje]
-    tempo = box[from_where][-amount:len(box[from_where])]
+    tempo = box[from_where][-amount:]
     for x in tempo:
         box[to_where].append(x)
 
-
-    # Potem bi pa te vrednosti če morabi izbrisati
     del box[from_where][-amount:]
 
 
